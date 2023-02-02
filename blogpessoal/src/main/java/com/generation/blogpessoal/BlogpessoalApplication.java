@@ -13,8 +13,4 @@ public class BlogpessoalApplication {
 		SpringApplication.run(BlogpessoalApplication.class, args);
 	}
 
-	public interface PostagemRepository extends JpaRepository<Postagem, Long> {
-		public List <Postagem> FindALLByTituloContainingIgnoreCase(@Param("titulo") String titulo);
-	}
-
 }
