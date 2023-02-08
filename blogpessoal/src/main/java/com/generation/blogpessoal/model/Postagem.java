@@ -1,12 +1,9 @@
 package com.generation.blogpessoal.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import org.hibernate.annotations.ManyToAny;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
@@ -33,6 +30,10 @@ public class Postagem {
         @ManyToOne
         @JsonIgnoreProperties("postagem")
         private Tema tema;
+
+        @ManyToOne
+        @JsonIgnoreProperties("postagem")
+        private Usuario usuario;
 
         public Long getId() {
                 return id;
@@ -71,5 +72,13 @@ public class Postagem {
 
         public void setTema(Tema tema) {
                 this.tema = tema;
+        }
+
+        public Usuario getUsuario() {
+                return usuario;
+        }
+
+        public void setUsuario(Usuario usuario) {
+                this.usuario = usuario;
         }
 }

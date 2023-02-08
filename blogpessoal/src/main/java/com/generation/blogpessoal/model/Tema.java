@@ -17,7 +17,7 @@ import java.util.List;
         @NotNull(message = "O Atributo Descrição é obrigatório")
         private String descricao;
 
-        @OneToMany(mappedBy = "Tema", cascade = CascadeType.REMOVE)
+        @OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
         @JsonIgnoreProperties("tema")
         private List<Postagem> postagem;
 
